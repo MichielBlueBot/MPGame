@@ -1,5 +1,6 @@
 const ClientEngine = require('lance-gg').ClientEngine;
 const MyRenderer = require('../client/MyRenderer');
+const Constants = require('../constants/constants')
 
 class MyClientEngine extends ClientEngine {
 
@@ -27,38 +28,38 @@ class MyClientEngine extends ClientEngine {
     preStep() {
 
         if (this.pressedKeys.up) {
-            this.sendInput('up', { movement: true });
+            this.sendInput(Constants.UP, { movement: true });
         }
 
         if (this.pressedKeys.down) {
-            this.sendInput('down', { movement: true });
+            this.sendInput(Constants.DOWN, { movement: true });
         }
 
         if (this.pressedKeys.left) {
-            this.sendInput('left', { movement: true });
+            this.sendInput(Constants.LEFT, { movement: true });
         }
 
         if (this.pressedKeys.right) {
-            this.sendInput('right', { movement: true });
+            this.sendInput(Constants.RIGHT, { movement: true });
         }
 
         if (this.pressedKeys.space) {
-            this.sendInput('space', { movement: true });
+            this.sendInput(Constants.SPACE, { movement: true });
         }
     }
 
     onKeyChange(e, isDown) {
         e = e || window.event;
 
-        if (e.keyCode == KEY_UP) {
+        if (e.keyCode == Constants.KEY_UP) {
             this.pressedKeys.up = isDown;
-        } else if (e.keyCode == KEY_DOWN) {
+        } else if (e.keyCode == Constants.KEY_DOWN) {
             this.pressedKeys.down = isDown;
-        } else if (e.keyCode == KEY_LEFT) {
+        } else if (e.keyCode == Constants.KEY_LEFT) {
             this.pressedKeys.left = isDown;
-        } else if (e.keyCode == KEY_RIGHT) {
+        } else if (e.keyCode == Constants.KEY_RIGHT) {
             this.pressedKeys.right = isDown;
-        } else if (e.keyCode == KEY_SPACE) {
+        } else if (e.keyCode == Constants.KEY_SPACE) {
             this.pressedKeys.space = isDown;
         }
     }

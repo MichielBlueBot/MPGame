@@ -9,19 +9,19 @@ body {
     position:absolute;
     width:10px;
     height:50px;
-    background:black
+    background:black;
 }
 
 .paddle2 {
     position:absolute;
     width:10px;
     height:50px;
-    background:black
+    background:black;
 }
 
 .ball {
     position:absolute;
     width:5px;
     height:5px;
-    background:black
+    background:black;
 }

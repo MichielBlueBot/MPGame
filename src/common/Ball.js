@@ -1,6 +1,7 @@
 'use strict';
 
 const DynamicObject = require('lance-gg').serialize.DynamicObject;
+const Constants = require('../constants/constants')
 
 class Ball extends DynamicObject {
 
@@ -11,7 +12,7 @@ class Ball extends DynamicObject {
         super(id);
         this.position.set(x, y);
         this.class = Ball;
-        this.velocity.set(BALL_X_SPEED, BALL_Y_SPEED);
+        this.velocity.set(Constants.BALL_X_SPEED, Constants.BALL_Y_SPEED);
     }
 
     onAddToWorld(gameEngine) {
