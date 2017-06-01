@@ -50,15 +50,15 @@ class MyClientEngine extends ClientEngine {
     onKeyChange(e, isDown) {
         e = e || window.event;
 
-        if (e.keyCode == '38') {
+        if (e.keyCode == KEY_UP) {
             this.pressedKeys.up = isDown;
-        } else if (e.keyCode == '40') {
+        } else if (e.keyCode == KEY_DOWN) {
             this.pressedKeys.down = isDown;
-        } else if (e.keyCode == '37') {
+        } else if (e.keyCode == KEY_LEFT) {
             this.pressedKeys.left = isDown;
-        } else if (e.keyCode == '39') {
+        } else if (e.keyCode == KEY_RIGHT) {
             this.pressedKeys.right = isDown;
-        } else if (e.keyCode == '32') {
+        } else if (e.keyCode == KEY_SPACE) {
             this.pressedKeys.space = isDown;
         }
     }

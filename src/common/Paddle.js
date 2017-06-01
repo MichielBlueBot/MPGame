@@ -7,6 +7,7 @@ class Paddle extends DynamicObject {
     constructor(id, x, playerId) {
         super(id);
         this.position.set(x, 0);
+        this.velocity.set(PADDLE_X_SPEED, PADDLE_Y_SPEED);
         this.playerId = playerId;
         this.class = Paddle;
     }

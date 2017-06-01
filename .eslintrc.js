@@ -9,7 +9,7 @@ module.exports = {
         "comma-dangle": "off",
         "guard-for-in": "off",
         "indent": ["error", 4],
-        "linebreak-style": ["error", "unix"],
+        "linebreak-style": ["error", "windows"],
         "max-len": "off",
         "max-statements-per-line": ["error", { "max": 2 }],
         "no-console": "off",

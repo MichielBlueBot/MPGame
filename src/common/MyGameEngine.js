@@ -1,11 +1,6 @@
 'use strict';
 const Paddle = require('./Paddle');
 const Ball = require('./Ball');
-const PADDING = 20;
-const WIDTH = 400;
-const HEIGHT = 400;
-const PADDLE_WIDTH = 10;
-const PADDLE_HEIGHT = 50;
 
 const GameEngine = require('lance-gg').GameEngine;
 
@@ -99,10 +94,15 @@ class MyGameEngine extends GameEngine {
         // get the player paddle tied to the player socket
         let playerPaddle = this.world.getPlayerObject(playerId);
         if (playerPaddle) {
-            if (inputData.input === 'up') {
-                playerPaddle.position.y -= 5;
-            } else if (inputData.input === 'down') {
-                playerPaddle.position.y += 5;
+            console.log(inputData.input)
+            if (inputData.input === KEY_UP) {
+                playerPaddle.position.y -= playerPaddle.velocity.y;
+            } else if (inputData.input === KEY_DOWN) {
+                playerPaddle.position.y += playerPaddle.velocity.y;
+            } else if (inputData.input === KEY_RIGHT) {
+                playerPaddle.position.x += playerPaddle.velocity.x;
+            } else if (inputData.input === KEY_LEFT) {
+                playerPaddle.position.x -= playerPaddle.velocity.x;
             }
         }
     }

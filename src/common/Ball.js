@@ -11,7 +11,7 @@ class Ball extends DynamicObject {
         super(id);
         this.position.set(x, y);
         this.class = Ball;
-        this.velocity.set(2, 2);
+        this.velocity.set(BALL_X_SPEED, BALL_Y_SPEED);
     }
 
     onAddToWorld(gameEngine) {
