@@ -31,10 +31,6 @@ class MyGameEngine extends GameEngine {
         // there used to be bound checks for the ball here
     }
 
-    registerClasses(serializer) {
-        serializer.registerClass(require('../common/Orb'));
-    }
-
     processInput(inputData, playerId) {
 
         super.processInput(inputData, playerId);

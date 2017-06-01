@@ -8,7 +8,6 @@ class MyClientEngine extends ClientEngine {
         super(gameEngine, options, MyRenderer);
 
         console.log('Client Engine constructor()');
-        this.serializer.registerClass(require('../common/Orb'));
         this.gameEngine.on('client__preStep', this.preStep.bind(this));
 
         // keep a reference for key press state

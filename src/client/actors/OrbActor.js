@@ -45,4 +45,4 @@ class OrbActor {
 }
 
 
-module.exports = ShipActor;
+module.exports = OrbActor;

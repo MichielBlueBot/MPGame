@@ -10,8 +10,8 @@ class MyRenderer extends Renderer {
 
     get ASSETPATHS() {
         return {
-            orb_red: 'assets/objects/orb_red.png',
-            orb_blue: 'assets/objects/orb_blue.png',
+            orb_red: '../../assets/objects/orb_red.png',
+            orb_blue: '../../assets/objects/orb_blue.png',
         };
     }
 
