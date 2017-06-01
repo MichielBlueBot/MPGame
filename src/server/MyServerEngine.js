@@ -10,6 +10,7 @@ class MyServerEngine extends ServerEngine {
 
     start() {
         super.start();
+        console.log('Server Engine start()');
 
         this.gameEngine.initGame();
 
@@ -22,19 +23,19 @@ class MyServerEngine extends ServerEngine {
     onPlayerConnected(socket) {
         super.onPlayerConnected(socket);
 
-        // attach newly connected player an available paddle
+        console.log('Player connected on socket '+socket);
+        // attach newly connected player
         if (this.players.player1 === null) {
             this.players.player1 = socket.id;
-            this.gameEngine.paddle1.playerId = socket.playerId;
         } else if (this.players.player2 === null) {
             this.players.player2 = socket.id;
-            this.gameEngine.paddle2.playerId = socket.playerId;
         }
     }
 
     onPlayerDisconnected(socketId, playerId) {
         super.onPlayerDisconnected(socketId, playerId);
 
+        console.log('Player ' + playerId + '('+socketId+') attempting to disconnect ...');
         if (this.players.player1 == socketId) {
             console.log('Player 1 disconnected');
             this.players.player1 = null;
@@ -44,5 +45,4 @@ class MyServerEngine extends ServerEngine {
         }
     }
 }
-
 module.exports = MyServerEngine;

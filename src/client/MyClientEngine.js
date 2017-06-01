@@ -7,7 +7,8 @@ class MyClientEngine extends ClientEngine {
     constructor(gameEngine, options) {
         super(gameEngine, options, MyRenderer);
 
-        this.serializer.registerClass(require('../common/PlayerAvatar'));
+        console.log('Client Engine constructor()');
+        this.serializer.registerClass(require('../common/Orb'));
         this.gameEngine.on('client__preStep', this.preStep.bind(this));
 
         // keep a reference for key press state
@@ -22,6 +23,8 @@ class MyClientEngine extends ClientEngine {
         let that = this;
         document.onkeydown = (e) => { that.onKeyChange(e, true); };
         document.onkeyup = (e) => { that.onKeyChange(e, false); };
+        document.addEventListener('onmousedown', (e) => { this.onMouseClickEvent(e, true);});
+        document.addEventListener('onmouseup', (e) => { this.onMouseClickEvent(e, false);});
     }
 
     // our pre-step is to process all inputs
@@ -62,6 +65,11 @@ class MyClientEngine extends ClientEngine {
         } else if (e.keyCode == Constants.KEY_SPACE) {
             this.pressedKeys.space = isDown;
         }
+    }
+
+    onMouseClickEvent(e, isDown) {
+        console.log(e);
+        console.log(isDown);
     }
 }
 

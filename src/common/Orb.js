@@ -1,24 +1,27 @@
+/**
+ * Created by Michiel on 1/06/2017.
+ */
 'use strict';
 
 const DynamicObject = require('lance-gg').serialize.DynamicObject;
-const Constants = require('../constants/constants')
+const Constants = require('../constants/constants');
 
-class Ball extends DynamicObject {
+class Orb extends DynamicObject {
 
     get bendingMultiple() { return 0.8; }
     get bendingVelocityMultiple() { return 0; }
 
-    constructor(id, x, y) {
+    constructor(id, team, x, y) {
         super(id);
         this.position.set(x, y);
-        this.class = Ball;
-        this.velocity.set(Constants.BALL_X_SPEED, Constants.BALL_Y_SPEED);
+        this.team = team;
+        this.class = Orb;
     }
 
     onAddToWorld(gameEngine) {
         if (gameEngine.renderer) {
-            gameEngine.renderer.addSprite(this, 'ball');
+            gameEngine.renderer.addSprite(this, 'orb');
         }
     }
 }
-module.exports = Ball;
+module.exports = Orb;

@@ -4,24 +4,3 @@ body {
     background: url('../assets/background/square_grid.gif') no-repeat;
     background-size: contain;
 }
-
-.paddle1 {
-    position:absolute;
-    width:10px;
-    height:50px;
-    background:black;
-}
-
-.paddle2 {
-    position:absolute;
-    width:10px;
-    height:50px;
-    background:black;
-}
-
-.ball {
-    position:absolute;
-    width:5px;
-    height:5px;
-    background:black;
-}
